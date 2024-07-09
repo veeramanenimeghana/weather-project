@@ -49,6 +49,7 @@ public class WeatherServiceClass {
         				.filter(weather-> weather.getWeatherId().equals(weatherId))
         				.findFirst()
         	    .orElseThrow(() -> new IllegalArgumentException("weather with ID" + weatherId + "not found"));
+		weatherRepository.delete(weatherToDelete);
         	}
 
 		
